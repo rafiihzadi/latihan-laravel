@@ -24,7 +24,7 @@ Route::get('/about', function () {
         "title" => "About",
         "name" => "Ravi Hebat",
         "email" => "rafi_ihzadi@gmail.com",
-        "image " => "wuifu.jpg"
+        "image" => "wuifu.jpg"
     ]);
 }); 
 
@@ -80,8 +80,8 @@ Route::get('posts/{slug}', function($slug){
         }
     }
 
-    return view('post'[
-        "title" => "Single Post",
-        "post" => $new_post
-    ]);
+    // return view('post'[
+    //     "title" => "Single Post",
+    //     "post" => $new_post
+    // ]);
 });

@@ -9,13 +9,13 @@
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav">
       <li class="navbar-item">
-        <a class="nav-link {{ ( $title === "Home" ) ? 'active' : '' }}" href="/">Home</a>
+        <a class="nav-link {{ ( $title === "Home" ) ? 'active' : '' }}" href="{{ url('/') }}">Home</a>
     </li>
     </li   class="nav-item">
-        <a class="nav-link {{ ( $title === "About" ) ? 'active' : '' }}" href="/about">About</a>
+        <a class="nav-link {{ ( $title === "About" ) ? 'active' : '' }}" href="{{ url('/about') }}">About</a>
 </li>
     <li   class="nav-item">
-        <a class="nav-link {{ ( $title === "Posts" ) ? 'active' : '' }} " href="/blog">Blog</a>
+        <a class="nav-link {{ ( $title === "Posts" ) ? 'active' : '' }} " href="{{ url('/blog') }}">Blog</a>
 </li>
 </ul>
     </div>
