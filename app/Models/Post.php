@@ -1,27 +1,19 @@
 <?php
 
-namespace App\Http\Controller;
+namespace App\Models;
 
-use Illuminate\Http\Request;
-use App\Models\Post;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
 
-class PostController extends Controller 
+class Post extends Model
 {
+    use HasFactory;
 
-    public function index()
-    {
-        return view('posts',[
-            "title" => "Posts",
-            "posts" => Post::all()
-        ]);
-    }
+    // protected $fillable = ['title','excerpt','body'];
+    protected $guarded = ['id'];
 
-    public function show($slug)
-    {
-        return view('post',[
-            "title" => "Single Post",
-            "post" => Post::find($slug)
-
-        ]);
-    }
+    public function category()
+   {
+    return $this->belongsTo(category::class);
+   }
 }

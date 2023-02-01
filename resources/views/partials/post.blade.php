@@ -1,12 +1,15 @@
-@dd($post);
-@extends('layouts.main')
+@extends('layouts/main')
 
 @section('container')
-<article>
-    <h2>{{ $post["title"] }}</h2>
-    <h5>{{ $post["author"] }}</h5>
-    <p>{{ $post["body"] }}</p>
-</article>
+    <h1 class="mb-5">{{ $post->title }}</h1>
 
-<a href="/blog">back to Posts</a>
+    <p>By. Ravi hebat in <a href="/categories/{{ $post->category->slug}}">{{
+        $post->category->name }}</a></p>
+    </p>
+
+
+    {!! $post->body !!}
+
+<a href="/posts">Back to posts</a>
+
 @endsection
