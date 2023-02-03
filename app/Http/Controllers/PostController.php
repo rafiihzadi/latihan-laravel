@@ -10,7 +10,8 @@ class PostController extends Controllers
     public function index()
     {
         return view ('posts', [
-            "title" => "Posts",
+            "title" => "All Posts",
+            "active" => 'posts',
             // "posts" => Post::all()
             "posts" => Post::latest()->get()
         ]);
@@ -20,7 +21,8 @@ class PostController extends Controllers
     {
         return view('post',[
             "title" => "Single Post",
+            "active" => 'posts',
             "post" => $post
         ]);
     }
-}
+} 
