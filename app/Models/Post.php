@@ -12,10 +12,33 @@ class Post extends Model
     // protected $fillable = ['title','excerpt','body'];
     protected $guarded = ['id'];
     protected $with = ['category',author];
+
+    public function scopeFilter($query, array $filters)
+    {
+        $query->when($filters['search'] ?? false, function($query, $search ){
+        return $query->where('title','like','%' . $search . '%')
+                   ->orWhere('body', 'like', '%'. $search . '%');
+    });
+
+    $query->when($filters['category']?? false, function($query, $category){
+        return $query->WhereHas('category',function($query) use ($caategory){
+            $query->where('slug', $category);
+
+        });
+
+    });
+
+    $query->when($filters['author'] ?? false, fn($query, $category) => 
+    $query->whenHas('author', fn($query, $category) =>
+    $query->where('username', $author)
+    )
+);
+
+    }
     
     public function category()
    {
-    return $this->belongsTo(category::class);
+    return $this->belongsTo(Category::class);
    }
    public function author()
    {

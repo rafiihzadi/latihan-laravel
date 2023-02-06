@@ -9,16 +9,17 @@
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav">
       <li class="navbar-item">
-        <a class="nav-link {{ ( $active === "Home" ) ? 'active' : '' }}" href="{{ url('/') }}">Home</a>
+        <a class="nav-link {{ ( $active === "home" ) ? 'active' : '' }}" href="{{ url('/') }}">Home</a>
     </li>
     </li   class="nav-item">
-        <a class="nav-link {{ ( $active === "About" ) ? 'active' : '' }}" href="{{ url('/about') }}">About</a>
+        <a class="nav-link {{ ( $active === "about" ) ? 'active' : '' }}" href="{{ url('/about') }}">About</a>
 </li>
     <li   class="nav-item">
-        <a class="nav-link {{ ( $active === "Posts" ) ? 'active' : '' }} " href="{{ url('/blog') }}">Blog</a>
+        <a class="nav-link {{ ( $active === "posts" ) ? 'active' : '' }} " href="{{ url('/blog') }}">Blog</a>
 </li>
     <li   class="nav-item">
-        <a class="nav-link {{ ( $active === "Categories" ) ? 'active' : '' }} " href="{{ url('/Categories'> Categories) }}">Blog</a>
+        <a class="nav-link {{ ( $active === "categories" ) ? 'active' : '' }} " href="{{ url('/
+          categories'> Categories) }}">Blog</a>
 </li>
 </ul>
     </div>
