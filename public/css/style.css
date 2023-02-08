@@ -1,3 +1,24 @@
-body{
-    background-color: salmon;
+.form-signin .checkbox {
+    font-weight: 400;
 }
+
+.form-signin .form-floating:focus-within {
+    z-index: 2;
+}
+
+.form-signin input[type="email"]{
+    margin-bottm: -1px;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+.form-signin input[type="password"]{
+    margin-bottm: 10px;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+}
+.form-registeration input {
+    border-radius: 0;
+    margin-bottom: 1px;
+}
+ 
