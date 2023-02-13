@@ -15,12 +15,15 @@ class CreateFailedJobsTable extends Migration
     {
         Schema::create('failed_jobs', function (Blueprint $table) {
             $table->id();
-            $table->string('uuid')->unique();
-            $table->text('connection');
-            $table->text('queue');
-            $table->longText('payload');
-            $table->longText('exception');
-            $table->timestamp('failed_at')->useCurrent();
+            $table->foreignId('category_id');
+            $table->foreignId('user_id');
+            $table->string('title');
+            $table->string('slug')->unique;
+            $table->string('image')-> nullable();
+            $table->text('excerpt');
+            $table->text('body');
+            $table->timestamp('published_at')->nullable();
+            $table->timestamp();
         });
     }
 
@@ -31,6 +34,6 @@ class CreateFailedJobsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('failed_jobs');
+        Schema::dropIfExists('posts_table');
     }
 }

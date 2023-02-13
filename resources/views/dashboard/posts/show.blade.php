@@ -7,12 +7,16 @@ extends('dashboard.layouts.main')
             <h1 class="mb-3">{{ $post->title }}</h1>
 
             <a href="/dashboard/posts" class="btn btn-success"><span 
-            data-feather="arrow-left"></span> Back to all my posts</a>
-                
-            <a href=""class="btn btn-warning"><span data-feather="edit">Edit</a>
-                
-            <a href=""class="btn btn-danger"><span data-feather="x-circle">  
-            Delete</a>
+            data-feather="arrow-left"></span> 
+            Back to all my posts</a>
+            <a href="/dashboard/posts/{{ $post->slug}}/edit"class="btn btn-warning"><span 
+            data-feather="edit">Edit</a>
+            <form action="/dashboard/posts/{{ $post->slug }}" method="post" class="d-inline">
+                  @method('delete')
+                  @csrf
+                  <button class="btn btn-danger" onclik="return confirm('Are you sure?')"
+                  ><span data-feather="x-circle"></span>Delete</button>
+                </form>
 
             <img src="https://source.unsplash.com/120x400?{{
                 $post->category->name }}"alt="{{ $post->category->name}}"
