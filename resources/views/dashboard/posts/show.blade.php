@@ -14,17 +14,18 @@ extends('dashboard.layouts.main')
             <form action="/dashboard/posts/{{ $post->slug }}" method="post" class="d-inline">
                   @method('delete')
                   @csrf
-                  <button class="btn btn-danger" onclik="return confirm('Are you sure?')"
-                  ><span data-feather="x-circle"></span>Delete</button>
+                  <button class="btn btn-danger" onclik="return confirm('Are you sure?')"><span 
+                  data-feather="x-circle"></span>Delete</button>
                 </form>
 
             @if($post->image)
-                <img src=""alt="{{ $post->category->name}}"
+            <div style="max-height: 350px; overflow:hidden;">
+                <img src="{{ asset('storage/' $post->image) }}"alt="{{ $post->category->name}}"
                 class="img-fluid mt-3">
+            </div>
             @else
-                <img src="https://source.unsplash.com/120x400?{{
-                $post->category->name }}"alt="{{ $post->category->name}}"
-                class="img-fluid mt-3">
+                <img src="https://source.unsplash.com/120x400?{{$post->category->name }}"alt="{{ 
+                    $post->category->name}}"class="img-fluid mt-3">
             @endif
 
 
