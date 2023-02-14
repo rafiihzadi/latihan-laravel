@@ -18,9 +18,15 @@ extends('dashboard.layouts.main')
                   ><span data-feather="x-circle"></span>Delete</button>
                 </form>
 
-            <img src="https://source.unsplash.com/120x400?{{
+            @if($post->image)
+                <img src=""alt="{{ $post->category->name}}"
+                class="img-fluid mt-3">
+            @else
+                <img src="https://source.unsplash.com/120x400?{{
                 $post->category->name }}"alt="{{ $post->category->name}}"
                 class="img-fluid mt-3">
+            @endif
+
 
                 <article class="my-3 fs-5">
                     {!! $post->body !!}
