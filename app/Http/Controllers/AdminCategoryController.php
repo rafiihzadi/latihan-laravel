@@ -14,10 +14,23 @@ class adminCategoryController extends Controller
      */
     public function index()
     {
-        return 'ini adalah halaman categories';
+        $this->authorize('admin');
+        return view('dashboard.categories.index', [
+            'categories' => Category::all()  
+        ]); 
     }
 
-    /**
+     /**
+     * Show the form created a new resource.
+     * 
+     * @return \Illuminate\Http\Response
+     */
+    public function create()
+    {
+        //
+    } 
+
+     /**
      * Store a newly created resource in storage.
      * 
      * @param \Illuminate\Http\Request $request
