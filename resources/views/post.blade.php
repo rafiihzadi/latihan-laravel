@@ -18,7 +18,7 @@ extends('layouts/main')
                 class="img-fluid">
             </div>
             @else
-                <img src="https://source.unsplash.com/120x400?{{$post->category->name }}"alt="{{ 
+                <img src="https://source.unsplash.com/1200x400?{{ $post->category->name }}"alt="{{ 
                     $post->category->name}}"class="img-fluid">
             @endif
 
@@ -28,4 +28,4 @@ extends('layouts/main')
             <a href="/posts" class="d- block mt-3">Back to posts</p> 
         </div>
     </div>
-@endsection
+@endsection  
