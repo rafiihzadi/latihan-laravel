@@ -1,6 +1,6 @@
 @extends('layouts.main')
 
-@section('content')
+@section('container')
 
 <h3 class="mb-5">Post Categories</h3>
 

@@ -45,16 +45,19 @@ Route::get('/categories', function() {
     return view('categories',[
         'title' => 'Post Categories',
         "active" => 'categories',
-        'categories' => Category::all()
+        'categories' => Category::paginate(7)
     ]);
     
 });
- Route::get('/categories/{category:slug}', function(Category $category){
-    return view('posts',[
-        'title' => "Post By Category: $category->name",
-        'posts'=> $category->posts->load('category','author')
+
+
+Route::get('/categories/{category:slug}', function(Category $category){
+    return view('posts', [
+        'title' => "Post By Category : $category->name",
+        "active" => 'categories',
+        'posts' => $category->posts,
     ]);
- });
+});
 
  Route::get('/author/{author:username}', function(User $author){
     return view('posts',[
