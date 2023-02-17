@@ -1,4 +1,4 @@
-@extends('layouts.main')
+@extends('layouts/main')
 
 @section('container')
 <h1 class="mb-3 text-center">{{ $title }}</h1>
@@ -57,7 +57,7 @@
       <div class="col-md-4 mb-3">
       <div class="card">
          <div class= "position-absolute px-3 py-2" style="background-color: rgba(0,0,0,0.7)">
-         <a href="/posts?category={{ $post->category=}}" class="text-white 
+         <a href="/categories/={{ $post->category=}}" class="text-white 
          text-decoration-none"> {{ $post->category->name }}</a></div>
          @if (@post->image)
          <img src="{{ asset('storage/' .$post->image) }}" alt="{{ $post->category->name }}"

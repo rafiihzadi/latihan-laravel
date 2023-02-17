@@ -1,6 +1,6 @@
 @extends('layouts.main')
 
-@section('content')
+@section('container')
 
 <h3 class="mb-5">Post Categories</h3>
 
@@ -8,7 +8,7 @@
     <div class="row">
         @foreach ($categories as $category)
         <div class="col-md-4">
-            <a href="/categories/{{ $category->slug }}">
+            <a href="/categories/={{ $post->category->slug=}}">
                 <div class="card bg-dark text-white">
                     <img src="https://source.unsplash.com/500x500?{{ $category->name }}" 
                     class="card-img" alt="{{ $category->name }}">
@@ -24,4 +24,3 @@
 </div>
           
 @endsection
-
