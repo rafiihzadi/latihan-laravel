@@ -21,9 +21,6 @@
     </div>
 </div>
 
-<div class="d-flex justify-content-end">
-   {{ $categories->links('pagination::bootstrap-4') }}
-</div>
-          
+
 @endsection
 
