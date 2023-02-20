@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Model\Category;
 use Illuminate\Http\Request;
-use App\Models\Post;
+use App\Models\Blog;
 use App\Models\User;
 
 class PostController extends Controllers
@@ -23,9 +23,9 @@ class PostController extends Controllers
         
 
 
-        return view ('posts', [
+        return view ('blogs', [
             "title" => "All Posts" . $title,
-            "active" => 'posts',
+            "active" => 'blogs',
             "posts" => Post:: latest()->filter(request(['search', 'category','author']))
             ->paginate(7)->withQueryString()
         ]);
@@ -33,7 +33,7 @@ class PostController extends Controllers
 
     public function show(Post $post)
     {
-        return view('post',[
+        return view('singelpost',[
             "title" => "Single Post",
             "active" => 'posts',
             "post" => $post
