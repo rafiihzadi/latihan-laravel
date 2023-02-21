@@ -7,13 +7,13 @@
 }
 
 .form-signin input[type="email"]{
-    margin-bottm: -1px;
+    margin-bottom: -1px;
     border-bottom-right-radius: 0;
     border-bottom-left-radius: 0;
 }
 
 .form-signin input[type="password"]{
-    margin-bottm: 10px;
+    margin-bottom: 10px;
     border-bottom-left-radius: 0;
     border-bottom-right-radius: 0;
 }

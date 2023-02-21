@@ -10,7 +10,7 @@ extends('layouts/main')
             <p>By. <a href="/posts?author={{ $post->author->username}}"
             class="text-decoration-none">{{ $post->author->name }}</a> in <a
             href="/posts?category={{ $post->category->slug}}"
-            class="text-secoration-none">{{ $post->category->name}}</a></p>
+            class="text-decoration-none">{{ $post->category->name}}</a></p>
             
             @if($post->image)
             <div style="max-height: 350px; overflow:hidden;">
